@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/all.css" />
+    <title>Dashboard</title>
+  </head>
+  <body>
+    <!-- navbar -->
+    <nav class="flex">
+      <div class="nav-search-div flex">
+        <i class="nav-search-icon fa fa-search text-secondary"></i>
+        <input
+          type="text"
+          class="nav-search-input"
+          placeholder="Search or type a command"
+        />
+        <button class="button nav-search-filter">
+          <i class="fa fa-filter"></i> F
+        </button>
+      </div>
+      <div class="nav-buttons-div flex">
+        <button class="button nav-signin">Sign in</button>
+        <button class="button nav-signup">Sign up</button>
+      </div>
+    </nav>
+    <!-- sidebar -->
+    <aside class="flex-col">
+      <div>
+        <div class="sidebar-icon-div">
+          <img
+            class="sidebar-icon"
+            src="https://ui8-core.herokuapp.com/img/logo-dark.png"
+            alt=""
+          />
+        </div>
+        <div class="sidebar-menu-div flex-col">
+          <div class="sidebar-menu sidebar-menu-home flex">
+            <div class="flex">
+              <i class="fa fa-house"></i>
+              <p class="sidebar-menu-text">Home</p>
+            </div>
+          </div>
+          <div class="sidebar-menu flex">
+            <div class="flex">
+              <i class="fa-regular fa-gem"></i>
+              <p class="sidebar-menu-text">Products</p>
+            </div>
+            <i class="fa-solid fa-angle-down"></i>
+          </div>
+          <div class="sidebar-menu flex">
+            <div class="flex">
+              <i class="fa-regular fa-user"></i>
+              <p class="sidebar-menu-text">Customers</p>
+            </div>
+            <i class="fa-solid fa-angle-down"></i>
+          </div>
+          <div class="sidebar-menu flex">
+            <div class="flex">
+              <i class="fa fa-shop"></i>
+              <p class="sidebar-menu-text">Shop</p>
+            </div>
+          </div>
+          <div class="sidebar-menu flex">
+            <div class="flex">
+              <i class="fa-solid fa-chart-pie"></i>
+              <p class="sidebar-menu-text">Income</p>
+            </div>
+            <i class="fa-solid fa-angle-down"></i>
+          </div>
+          <div class="sidebar-menu flex">
+            <div class="flex">
+              <i class="fa fa-percentage"></i>
+              <p class="sidebar-menu-text">Promote</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr />
+      <div class="sidebar-footer flex-col">
+        <div class="sidebar-footer-help-div flex">
+          <div class="sidebar-footer-help-div-left flex">
+            <i class="fa fa-question-circle"></i>
+            <p class="sidebar-footer-text">Help & getting started</p>
+          </div>
+          <p class="sidebar-footer-eight">8</p>
+        </div>
+        <div class="sidebar-footer-dark-light-div justify-content-between flex">
+          <div class="sidebar-footer-light footer-light-active">
+            <i class="fa fa-sun"></i>
+            Light
+          </div>
+          <div class="sidebar-footer-dark text-secondary">
+            <i class="fa fa-moon"></i>
+            Dark
+          </div>
+        </div>
+      </div>
+    </aside>
+    <!-- main -->
+    <main>
+      <h1>Dashboard</h1>
+      <div class="flex between align-items-start">
+        <div class="main-left">
+          <div class="main-overview-div rounded">
+            <div class="main-overview-title-div flex between">
+              <div class="flex main-overview-title align-items-center">
+                <div class="main-overview-title-before"></div>
+                <h3 class="main-overview-title-h3 mb-0">Overview</h3>
+              </div>
+              <div class="select">
+                <select id="slct">
+                  <option selected>All time</option>
+                  <option>In a year</option>
+                  <option>Per month</option>
+                </select>
+              </div>
+            </div>
+            <div class="main-overview-statistics flex between rounded mt-3">
+              <div
+                class="main-overview-statistics-customers-div shadow rounded p-3 bg-white flex between"
+              >
+                <div class="flex">
+                  <div
+                    class="main-overview-statistics-customers-icon bg-info text-center"
+                  >
+                    <i class="fa-solid fa-bag-shopping"></i>
+                  </div>
+                  <div
+                    class="main-overview-statistics-customers-number flex-col ms-3"
+                  >
+                    <p class="text-secondary m-0">Customers</p>
+                    <h2 class="display-4 fw-bold">1024</h2>
+                  </div>
+                </div>
+                <div
+                  class="main-overview-statistics-customers-percentage rounded rounded-danger bg-danger bg-opacity-25 text-danger p-1 ps-2"
+                >
+                  <p class="m-0"><i class="fa fa-arrow-down"></i> 37.8%</p>
+                </div>
+              </div>
+              <div
+                class="main-overview-statistics-income-div bg-transparent p-3 flex between"
+              >
+                <div class="flex">
+                  <div class="main-overview-statistics-income-icon text-center">
+                    <i class="fa-solid fa-wave-square"></i>
+                  </div>
+                  <div
+                    class="main-overview-statistics-income-number flex-col ms-3"
+                  >
+                    <p class="text-secondary m-0">Income</p>
+                    <h2 class="display-4 fw-bold">256K</h2>
+                  </div>
+                </div>
+                <div
+                  class="main-overview-statistics-income-percentage rounded rounded-success bg-success bg-opacity-25 text-success p-1 ps-2"
+                >
+                  <p class="m-0"><i class="fa fa-arrow-up"></i> 37.8%</p>
+                </div>
+              </div>
+            </div>
+            <div class="main-overview-send-div mt-3 flex between">
+              <p class="main-overview-send-text text-secondary">
+                Welcome <strong>857 customers</strong> with a personal message
+                😎
+              </p>
+              <button class="button main-overview-send-button">
+                Send message
+              </button>
+            </div>
+            <div
+              class="main-overview-customers-div flex mt-4 px-5 justify-content-between"
+            >
+              <div class="main-overview-customers flex-col align-items-center">
+                <div class="main-overview-customers-img">
+                  <img
+                    src="https://ui8-core.herokuapp.com/img/content/avatar.jpg"
+                    alt=""
+                  />
+                </div>
+                <p class="main-overview-customers-name">Gladyce</p>
+              </div>
+              <div class="main-overview-customers flex-col align-items-center">
+                <div class="main-overview-customers-img">
+                  <img
+                    src="https://ui8-core.herokuapp.com/img/content/avatar-1.jpg"
+                    alt=""
+                  />
+                </div>
+                <p class="main-overview-customers-name">Elbert</p>
+              </div>
+              <div class="main-overview-customers flex-col align-items-center">
+                <div class="main-overview-customers-img">
+                  <img
+                    src="https://ui8-core.herokuapp.com/img/content/avatar-2.jpg"
+                    alt=""
+                  />
+                </div>
+                <p class="main-overview-customers-name">Jayce</p>
+              </div>
+              <div class="main-overview-customers flex-col align-items-center">
+                <div
+                  class="main-overview-customers-img-gray flex align-items-center justify-content-center rounded-circle"
+                >
+                  <i class="fa fa-arrow-right"></i>
+                </div>
+                <p class="main-overview-customers-name">View all</p>
+              </div>
+            </div>
+          </div>
+          <div class="main-views-div rounded">
+            <div class="main-views-title-div rounded flex between">
+              <div class="flex main-views-title align-items-center">
+                <div class="main-views-title-before"></div>
+                <h3 class="main-views-title-h3 mb-0">Product views</h3>
+              </div>
+              <div class="select">
+                <select id="slct">
+                  <option selected>Last 7 days</option>
+                  <option>This month</option>
+                  <option>All time</option>
+                </select>
+              </div>
+            </div>
+            <div class="main-views-chart mt-4">
+              <div
+                class="main-views-chart-lines flex-col justify-content-between"
+              >
+                <div class="flex align-items-center">
+                  <p class="m-0 me-3 text-secondary">32</p>
+                  <div class="line"></div>
+                </div>
+                <div class="flex align-items-center">
+                  <p class="m-0 me-3 text-secondary">24</p>
+                  <div class="line"></div>
+                </div>
+                <div class="flex align-items-center">
+                  <p class="m-0 me-3 text-secondary">16</p>
+                  <div class="line"></div>
+                </div>
+                <div class="flex align-items-center">
+                  <p class="m-0 me-3 text-secondary">8</p>
+                  <div class="line"></div>
+                </div>
+                <div class="flex align-items-center">
+                  <p class="m-0 me-3 text-secondary">0</p>
+                  <div class="line"></div>
+                </div>
+              </div>
+              <div class="main-views-chart-box flex between px-5">
+                <div class="flex-col align-items-center justify-content-end">
+                  <div class="box-1"></div>
+                  <p class="m-0 text-secondary">22</p>
+                </div>
+                <div class="flex-col align-items-center justify-content-end">
+                  <div class="box-2"></div>
+                  <p class="m-0 text-secondary">23</p>
+                </div>
+                <div class="flex-col align-items-center justify-content-end">
+                  <div class="box-3"></div>
+                  <p class="m-0 text-secondary">24</p>
+                </div>
+                <div class="flex-col align-items-center justify-content-end">
+                  <div class="box-4"></div>
+                  <p class="m-0 text-secondary">25</p>
+                </div>
+                <div class="flex-col align-items-center justify-content-end">
+                  <div class="box-5"></div>
+                  <p class="m-0 text-secondary">26</p>
+                </div>
+                <div class="flex-col align-items-center justify-content-end">
+                  <div class="box-6"></div>
+                  <p class="m-0 text-secondary">27</p>
+                </div>
+                <div class="flex-col align-items-center justify-content-end">
+                  <div class="box-7"></div>
+                  <p class="m-0 text-secondary">28</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="main-pro-div rounded">
+            <div class="main-pro-title-div rounded flex between">
+              <div class="flex main-pro-title align-items-center">
+                <div class="main-pro-title-before"></div>
+                <h3 class="main-pro-title-h3 mb-0">Pro tips</h3>
+              </div>
+            </div>
+            <p class="mt-5 text-secondary">
+              Need some ideas for the next product?
+            </p>
+            <div class="main-pro-options-div flex-col">
+              <div class="flex between main-pro-option-div">
+                <div class="main-pro-option flex align-items-center">
+                  <div
+                    class="flex align-items-center justify-content-center rounded-circle border main-pro-option-icon p-4"
+                  >
+                    <i class="fa fa-calendar-days"></i>
+                  </div>
+                  <div class="flex-col between ms-2">
+                    <p class="m-0 fw-bolder">Early access</p>
+                    <div class="flex align-items-center">
+                      <div
+                        class="main-pro-option-new flex justify-content-center align-items-center px-1 rounded"
+                      >
+                        New
+                      </div>
+                      <div
+                        class="main-pro-option-time flex border align-items-center rounded ms-2"
+                      >
+                        <div class="main-pro-option-img">
+                          <img
+                            src="https://ui8-core.herokuapp.com/img/content/avatar.jpg"
+                            alt=""
+                          />
+                        </div>
+
+                        <p class="m-0 text-secondary ms-1">3 mins read</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="main-pro-option flex align-items-center">
+                  <div
+                    class="flex align-items-center justify-content-center rounded-circle border main-pro-option-icon p-4"
+                  >
+                    <i class="fa fa-arrow-right"></i>
+                  </div>
+                  <div class="flex-col between ms-2">
+                    <p class="m-0 fw-bolder">Asset use guidelines</p>
+                    <div class="flex align-items-center">
+                      <div
+                        class="main-pro-option-small flex justify-content-center align-items-center px-1 rounded"
+                      >
+                        Small label
+                      </div>
+                      <div
+                        class="main-pro-option-time flex border align-items-center rounded ms-2"
+                      >
+                        <div class="main-pro-option-img">
+                          <img
+                            src="https://ui8-core.herokuapp.com/img/content/avatar-3.jpg"
+                            alt=""
+                          />
+                        </div>
+
+                        <p class="m-0 text-secondary ms-1">time</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="flex between mt-4 main-pro-option-div">
+                <div class="main-pro-option flex align-items-center">
+                  <div
+                    class="flex align-items-center justify-content-center rounded-circle border main-pro-option-icon p-4"
+                  >
+                    <i class="fa fa-pen-ruler"></i>
+                  </div>
+                  <div class="flex-col between ms-2">
+                    <p class="m-0 fw-bolder">Exclusive downloads</p>
+                    <div class="flex align-items-center">
+                      <div
+                        class="main-pro-option-time flex border align-items-center rounded"
+                      >
+                        <div class="main-pro-option-img">
+                          <img
+                            src="https://ui8-core.herokuapp.com/img/content/avatar-1.jpg"
+                            alt=""
+                          />
+                        </div>
+
+                        <p class="m-0 text-secondary ms-1">2 mins read</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="main-pro-option flex align-items-center">
+                  <div
+                    class="flex align-items-center justify-content-center rounded-circle border main-pro-option-icon p-4"
+                  >
+                    <i class="fa fa-video"></i>
+                  </div>
+                  <div class="flex-col between ms-2">
+                    <p class="m-0 fw-bolder">Behind the scenes</p>
+                    <div class="flex align-items-center">
+                      <div
+                        class="main-pro-option-hot flex justify-content-center align-items-center px-1 rounded"
+                      >
+                        Hot
+                      </div>
+                      <div
+                        class="main-pro-option-time flex border align-items-center rounded ms-2"
+                      >
+                        <div class="main-pro-option-img">
+                          <img
+                            src="https://ui8-core.herokuapp.com/img/content/avatar-3.jpg"
+                            alt=""
+                          />
+                        </div>
+
+                        <p class="m-0 text-secondary ms-1">3 mins read</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="flex between mt-4 main-pro-option-div">
+                <div class="main-pro-option flex align-items-center">
+                  <div
+                    class="flex align-items-center justify-content-center rounded-circle border main-pro-option-icon p-4"
+                  >
+                    <i class="fa fa-phone"></i>
+                  </div>
+                  <div class="flex-col between ms-2">
+                    <p class="m-0 fw-bolder">Asset use guidelines</p>
+                    <div class="flex align-items-center">
+                      <div
+                        class="main-pro-option-small flex justify-content-center align-items-center px-1 rounded"
+                      >
+                        popular
+                      </div>
+                      <div
+                        class="main-pro-option-time flex border align-items-center rounded ms-2"
+                      >
+                        <div class="main-pro-option-img">
+                          <img
+                            src="https://ui8-core.herokuapp.com/img/content/avatar.jpg"
+                            alt=""
+                          />
+                        </div>
+
+                        <p class="m-0 text-secondary ms-1">Time</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="main-pro-option flex align-items-center">
+                  <div
+                    class="flex align-items-center justify-content-center rounded-circle border main-pro-option-icon p-4"
+                  >
+                    <i class="fa fa-check-circle"></i>
+                  </div>
+                  <div class="flex-col between ms-2">
+                    <p class="m-0 fw-bolder">Life & work updates</p>
+                    <div class="flex align-items-center">
+                      <div
+                        class="main-pro-option-time flex border align-items-center rounded"
+                      >
+                        <div class="main-pro-option-img">
+                          <img
+                            src="https://ui8-core.herokuapp.com/img/content/avatar-2.jpg"
+                            alt=""
+                          />
+                        </div>
+
+                        <p class="m-0 text-secondary ms-1">3 mins read</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="main-more-div">
+            <div class="main-more-title-div rounded flex between">
+              <div class="flex main-more-title align-items-center">
+                <div class="main-more-title-before"></div>
+                <h3 class="main-more-title-h3 mb-0">Get more customers!</h3>
+              </div>
+            </div>
+            <p class="mb-0 mt-3">
+              50% of new customers explore products because the author sharing
+              the work on the social media network. Gain your earnings right
+              now! 🔥
+            </p>
+            <div class="main-more-buttons flex between mt-3">
+              <button class="button main-more-button text-secondary">
+                <i class="fa-brands fa-facebook-f"></i> Facebook
+              </button>
+              <button class="button main-more-button text-secondary">
+                <i class="fa-brands fa-twitter"></i> Twitter
+              </button>
+              <button class="button main-more-button text-secondary">
+                <i class="fa-brands fa-instagram"></i> Instagram
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="main-right">
+          <div class="main-popular-div rounded py-4">
+            <div class="main-popular-title-div flex align-items-center">
+              <div class="main-popular-before"></div>
+              <h3 class="main-popular-title-h3 mb-0">Popular products</h3>
+            </div>
+            <div
+              class="flex align-items-center justify-content-between text-secondary mt-4"
+            >
+              <p>Products</p>
+              <p>Earning</p>
+            </div>
+            <hr class="mt-2 mb-1" />
+            <div
+              class="main-popular-product align-items-center justify-content-between flex py-3"
+            >
+              <div class="main-popular-product-img">
+                <img
+                  class="rounded"
+                  src="https://ui8-core.herokuapp.com/img/content/product-pic-1.jpg"
+                  alt=""
+                />
+              </div>
+              <p class="mb-0 main-popular-product-title fw-bolder">
+                Crypter - NFT UI kit
+              </p>
+              <div>
+                <p class="mb-0">$2,453.80</p>
+                <div
+                  class="rounded rounded-success bg-success bg-opacity-25 text-success p-1 ps-2"
+                >
+                  Active
+                </div>
+              </div>
+            </div>
+            <div
+              class="main-popular-product align-items-center justify-content-between flex py-3"
+            >
+              <div class="main-popular-product-img">
+                <img
+                  class="rounded"
+                  src="https://ui8-core.herokuapp.com/img/content/product-pic-2.jpg"
+                  alt=""
+                />
+              </div>
+              <p class="mb-0 main-popular-product-title fw-bolder">
+                Bento Matte 3D illustration 1.0
+              </p>
+              <div>
+                <p class="mb-0">$105.60</p>
+                <div
+                  class="rounded rounded-danger bg-danger bg-opacity-25 text-danger p-1 ps-2"
+                >
+                  Deactive
+                </div>
+              </div>
+            </div>
+            <div
+              class="main-popular-product align-items-center justify-content-between flex py-3"
+            >
+              <div class="main-popular-product-img">
+                <img
+                  class="rounded"
+                  src="https://ui8-core.herokuapp.com/img/content/product-pic-3.jpg"
+                  alt=""
+                />
+              </div>
+              <p class="mb-0 main-popular-product-title fw-bolder">
+                Excellent material 3D chair
+              </p>
+              <div>
+                <p class="mb-0">$648.60</p>
+                <div
+                  class="rounded rounded-success bg-success bg-opacity-25 text-success p-1 ps-2"
+                >
+                  Active
+                </div>
+              </div>
+            </div>
+            <div
+              class="main-popular-product align-items-center justify-content-between flex py-3"
+            >
+              <div class="main-popular-product-img">
+                <img
+                  class="rounded"
+                  src="https://ui8-core.herokuapp.com/img/content/product-pic-4.jpg"
+                  alt=""
+                />
+              </div>
+              <p class="mb-0 main-popular-product-title fw-bolder">
+                Fleet - travel shopping kit
+              </p>
+              <div>
+                <p class="mb-0">$648.60</p>
+                <div
+                  class="rounded rounded-success bg-success bg-opacity-25 text-success p-1 ps-2"
+                >
+                  Active
+                </div>
+              </div>
+            </div>
+            <button class="button main-popular-button rounded-3">
+              All products
+            </button>
+          </div>
+          <div class="main-comment-div rounded py-4">
+            <div class="main-comment-title-div flex align-items-center">
+              <div class="main-comment-before"></div>
+              <h3 class="main-comment-title-h3 mb-0">Comments</h3>
+            </div>
+            <div class="main-comments flex-col mt-2">
+              <div class="main-comment">
+                <div class="main-comment-profile flex between mt-2">
+                  <div class="flex between">
+                    <div class="main-comment-profile-img">
+                      <img
+                        src="https://ui8-core.herokuapp.com/img/content/avatar.jpg"
+                        alt=""
+                      />
+                    </div>
+                    <div class="flex-col ms-2">
+                      <p class="mb-0">
+                        Ethel <span class="text-secondary">@ethel</span>
+                      </p>
+                      <p class="mb-0">
+                        <span class="text-secondary">On </span>Smiles – 3D icons
+                      </p>
+                    </div>
+                  </div>
+                  <p class="mb-0 text-secondary">1h</p>
+                </div>
+                <div class="flex-col ps-5 my-2">
+                  <p class="mb-0 ms-2">Great work 😊</p>
+                  <div
+                    class="main-comment-icons flex between ms-2 mt-3 text-secondary"
+                  >
+                    <i class="fa-regular fa-message"></i>
+                    <i class="fa-regular fa-heart"></i>
+                    <i class="fa fa-link"></i>
+                  </div>
+                </div>
+                <hr />
+              </div>
+              <div class="main-comment">
+                <div class="main-comment-profile flex between mt-2">
+                  <div class="flex between">
+                    <div class="main-comment-profile-img">
+                      <img
+                        src="https://ui8-core.herokuapp.com/img/content/avatar-1.jpg"
+                        alt=""
+                      />
+                    </div>
+                    <div class="flex-col ms-2">
+                      <p class="mb-0">
+                        Jazmyn <span class="text-secondary">@jaz.designer</span>
+                      </p>
+                      <p class="mb-0">
+                        <span class="text-secondary">On </span>Fleet - Travel
+                        shopping
+                      </p>
+                    </div>
+                  </div>
+                  <p class="mb-0 text-secondary">8h</p>
+                </div>
+                <div class="flex-col ps-5 my-2">
+                  <p class="mb-0 ms-2">I need react version asap!</p>
+                  <div
+                    class="main-comment-icons flex between ms-2 mt-3 text-secondary"
+                  >
+                    <i class="fa-regular fa-message"></i>
+                    <i class="fa-regular fa-heart"></i>
+                    <i class="fa fa-link"></i>
+                  </div>
+                </div>
+                <hr />
+              </div>
+              <div class="main-comment">
+                <div class="main-comment-profile flex between mt-2">
+                  <div class="flex between">
+                    <div class="main-comment-profile-img">
+                      <img
+                        src="https://ui8-core.herokuapp.com/img/content/avatar-2.jpg"
+                        alt=""
+                      />
+                    </div>
+                    <div class="flex-col ms-2">
+                      <p class="mb-0">
+                        Ethel <span class="text-secondary">@ethel</span>
+                      </p>
+                      <p class="mb-0">
+                        <span class="text-secondary">On </span>Smiles – 3D icons
+                      </p>
+                    </div>
+                  </div>
+                  <p class="mb-0 text-secondary">1h</p>
+                </div>
+                <div class="flex-col ps-5 my-2">
+                  <p class="mb-0 ms-2">How can I buy only the design?</p>
+                  <div
+                    class="main-comment-icons flex between ms-2 mt-3 text-secondary"
+                  >
+                    <i class="fa-regular fa-message"></i>
+                    <i class="fa-regular fa-heart"></i>
+                    <i class="fa fa-link"></i>
+                  </div>
+                </div>
+                <hr />
+              </div>
+            </div>
+            <button class="button main-popular-button rounded-3">
+              View all
+            </button>
+          </div>
+          <div class="main-refund-div rounded py-4">
+            <div class="main-refund-title-div flex align-items-center">
+              <div class="main-refund-before"></div>
+              <h3 class="main-refund-title-h3 mb-0">Refund requested</h3>
+            </div>
+            <div class="main-refund flex mt-3">
+              <div
+                class="main-refund-icon flex justify-content-center align-items-center text-danger bg-danger bg-opacity-25"
+              >
+                <i class="fa-solid fa-bag-shopping"></i>
+              </div>
+              <p class="mb-0 ms-2">
+                You have <strong>52 open refund requests</strong> to action.
+                This includes <strong>8 new requests</strong>. 👀
+              </p>
+            </div>
+            <button class="button main-popular-button rounded-3 mt-3">
+              Review refund requests
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="./js/all.js"></script>
+    <!-- JavaScript Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./js/app.js"></script>
+  </body>
+</html>
